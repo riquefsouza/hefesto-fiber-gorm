@@ -8,14 +8,14 @@ import (
 	"github.com/riquefsouza/hefesto-fiber-gorm/models"
 )
 
-func AdmParameterCategory_FindAll(c *fiber.Ctx) error {
+func AdmParameter_FindAll(c *fiber.Ctx) error {
 	db := database.DBConn
 	var list []models.AdmParameterCategory
 	db.Find(&list)
 	return c.JSON(list)
 }
 
-func AdmParameterCategory_FindById(c *fiber.Ctx) error {
+func AdmParameter_FindById(c *fiber.Ctx) error {
 	id := c.Params("id")
 	db := database.DBConn
 	var obj models.AdmParameterCategory
@@ -23,7 +23,7 @@ func AdmParameterCategory_FindById(c *fiber.Ctx) error {
 	return c.JSON(obj)
 }
 
-func AdmParameterCategory_Insert(c *fiber.Ctx) error {
+func AdmParameter_Insert(c *fiber.Ctx) error {
 	db := database.DBConn
 	//var obj models.AdmParameterCategory
 	obj := new(models.AdmParameterCategory)
@@ -35,12 +35,12 @@ func AdmParameterCategory_Insert(c *fiber.Ctx) error {
 	return c.JSON(obj)
 }
 
-func AdmParameterCategory_Update(c *fiber.Ctx) error {
+func AdmParameter_Update(c *fiber.Ctx) error {
 	msg := fmt.Sprintf("update, %s", c.Params("id"))
 	return c.SendString(msg)
 }
 
-func AdmParameterCategory_Delete(c *fiber.Ctx) error {
+func AdmParameter_Delete(c *fiber.Ctx) error {
 	id := c.Params("id")
 	db := database.DBConn
 

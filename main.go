@@ -19,6 +19,7 @@ func main() {
 	defer database.DBConn.Close()
 
 	controllers.Routes_AdmParameterCategory(app, URL)
+	controllers.Routes_AdmParameter(app, URL)
 
 	log.Fatal(app.Listen(":3000"))
 }
